@@ -1,0 +1,4 @@
+.rong {
+  width: 20%;
+  float: left;
+}

@@ -3,8 +3,14 @@
     "pages/index/index",
     "pages/my/index",
     "pages/order/index",
-    "custom-tab-bar/index"
+    "custom-tab-bar/index",
+    "pages/index/search/index"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",

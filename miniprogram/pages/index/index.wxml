@@ -1,2 +1,36 @@
-<!--miniprogram/pages/index/index.wxml-->
-<text>miniprogram/pages/index/index.wxml</text>
+<view class="container">
+  <!-- 顶部搜索热门模块 -->
+  <view class="header">
+    <view>
+      <icon class="iconfont icon-location"></icon>
+      <text class="zhuijia">{{city}}</text>
+    </view>
+    <view class="searchNei" bindtap="getSearchValue">
+      <icon class="iconfont icon-search"></icon>
+      请输入你想要搜索的内容
+    </view>
+    <!-- 历史搜索记录 -->
+  </view>
+  <!-- 快捷轮播 -->
+  <view class="fu">
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}">
+        <view class="furongqi" wx:for="{{background}}" wx:key="*this" wx:for-item="itemName">
+          <swiper-item>
+            <view class="rong" wx:for="{{itemName.arr}}" wx:key="*this" wx:for-item="item">
+              <view style="background:{{item.bg}};">
+                <icon class="iconfont {{item.url}}"></icon>
+              </view>
+              <text>{{item.title}}</text>
+            </view>
+          </swiper-item>
+        </view>
+      </swiper>
+    </view>
+  </view>
+  <!-- 为你优选 -->
+  <view></view>
+  <!-- s神价格 -->
+  <view></view>
+  <!-- 附近商家 -->
+</view>
