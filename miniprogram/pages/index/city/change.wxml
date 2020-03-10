@@ -1,0 +1,26 @@
+<view>
+  <view class="head-top">
+    <view class="titleContent ellipsis">
+      <span>{{title}}</span>
+    </view>
+    <navigator url="./index" class="swtichCity">切换城市</navigator>
+  </view>
+  <view class="kong"></view>
+  <view class="city-form">
+    <view>
+      <input bindinput="changeKey" class="shang" type="text" placeholder="输入学校.地址.商务楼等等" />
+    </view>
+    <view>
+      <button class="submitCity" bindtap="submitDemo">
+        提交
+      </button>
+    </view>
+
+  </view>
+  <view class="getpois_ul">
+    <view bindtap="changeHome" data-item="{{item}}" class="neiLi" wx:for="{{arr}}" wx:key="*this">
+      <text class="h4name ellipsis">{{item.name}}</text>
+      <text class="textContent ellipsis">{{item.address}}</text>
+    </view>
+  </view>
+</view>

@@ -1,1 +1,67 @@
-/* miniprogram/pages/index/index.wxss */
+.header {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  flex-direction: column;
+}
+
+.zhuijia::after {
+  content: " > ";
+  font-size: 10px;
+}
+
+.searchNei {
+  font-size: 13px;
+  background: #eee;
+  border-radius: 5px;
+  padding: 0 7px 7px 7px;
+  margin-top: 10px;
+}
+
+.rong {
+  width: 20%;
+  float: left;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rong view {
+  color: #eee;
+  background: red;
+  padding: 8px 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fu {
+  margin: 10px 0;
+}
+
+/* 为你优选 */
+
+.youxuan {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.header_title {
+  display: flex;
+  justify-content: space-between;
+  line-height: 20px;
+}
+
+.header_title h2 {
+  font-size: 20px;
+}
+
+.more::after {
+  content: " > ";
+  font-size: 10px;
+}
