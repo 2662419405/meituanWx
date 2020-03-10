@@ -11,6 +11,7 @@ Page({
     city: '',
     latitude: '',
     longitude: '',
+    list: [],
     background: [{
       list: 1,
       arr: [{
@@ -135,19 +136,25 @@ Page({
    */
   onShow: function() {
     let vm = this;
-    vm.getUserLocation();
+    //vm.getUserLocation(); // 通过微信小城的api查询地址
     wx.getStorage({
       key: 'city',
       success: function(res) {
         vm.setData({
-          city: res.city,
-          latitude: res.latitude,
-          longitude: res.longitude
+          city: res.data.name,
+          latitude: res.data.latitude,
+          longitude: res.data.longitude
         })
+        vm.getDefaultList()
       },
+      // 如果没有位置,需要去设置位置
+      fail: function(error) {
+        wx.navigateTo({
+          url: './city/index',
+        })
+      }
     })
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -190,6 +197,7 @@ Page({
         // res.authSetting['scope.userLocation'] == false    表示 非初始化进入该页面,且未授权
         // res.authSetting['scope.userLocation'] == true    表示 地理位置授权
         if (res.authSetting['scope.userLocation'] != undefined && res.authSetting['scope.userLocation'] != true) {
+          console.log(1)
           wx.showModal({
             title: '请求授权当前位置',
             content: '需要获取您的地理位置，请确认授权',
@@ -282,5 +290,17 @@ Page({
     wx.navigateTo({
       url: './city/index',
     })
-  }
+  },
+  // 获取城市列表
+  getDefaultList: function() {
+    var vm = this;
+    wx.request({
+      url: `https://elm.cangdu.org/shopping/restaurants?latitude=${this.data.latitude}&longitude=${this.data.longitude}`,
+      success: function(res) {
+        vm.setData({
+          list: res.data
+        })
+      }
+    })
+  },
 })
