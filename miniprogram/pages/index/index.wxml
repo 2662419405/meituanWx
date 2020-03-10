@@ -17,11 +17,13 @@
       <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ccc" indicator-active-color="#fd9d21">
         <view class="furongqi" wx:for="{{background}}" wx:key="*this" wx:for-item="itemName">
           <swiper-item>
-            <view class="rong" wx:for="{{itemName.arr}}" wx:key="*this" wx:for-item="item">
-              <view style="background:{{item.bg}};">
-                <icon class="iconfont {{item.url}}"></icon>
+            <view class="rongqi">
+              <view bindtap="switchSwiperOne" data-item="{{item}}" class="rong" wx:for="{{itemName.arr}}" wx:key="*this" wx:for-item="item">
+                <view>
+                  <image src="https://fuss10.elemecdn.com{{item.image_url}}"></image>
+                </view>
+                <view>{{item.title}}</view>
               </view>
-              <text>{{item.title}}</text>
             </view>
           </swiper-item>
         </view>
@@ -45,7 +47,7 @@
     </view>
     <view class="shoplist_container">
       <view class="fuyuansuList">
-        <view wx:key="*this" wx:for="{{list}}" class="shop_list_li">
+        <view wx:key="*this" wx:for="{{list}}" bindtap="toSwitchPage" data-item="{{item}}" class="shop_list_li">
           <view class="avatarImg">
             <image src="https://elm.cangdu.org/img/{{item.image_path}}"></image>
           </view>
@@ -56,7 +58,7 @@
                 {{item.name}}
               </view>
               <view class="shop_detail_ul">
-                <view class="supports" wx:for="{{item.supports}}" wx:for-item="supports">
+                <view class="supports" wx:key="*this" wx:for="{{item.supports}}" wx:for-item="supports">
                   {{supports.icon_name}}
                 </view>
               </view>
@@ -70,7 +72,7 @@
                       <icon wx:for="{{5}}" class="iconfont icon-wujiaoxingxingxingshoucang"></icon>
                     </view> -->
                     <view class="star_overflow" style="width:{{item.rating*20}}%">
-                      <icon wx:for="{{5}}" class="iconfont icon-wujiaoxingxingxingshoucang"></icon>
+                      <icon wx:key="*this" wx:for="{{5}}" class="iconfont icon-wujiaoxingxingxingshoucang"></icon>
                     </view>
                   </view>
                   <view class="rating_num">{{item.rating}}</view>

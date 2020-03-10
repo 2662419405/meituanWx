@@ -19,29 +19,32 @@
 }
 
 .rong {
-  width: 20%;
-  float: left;
-  font-size: 0.72rem;
+  width: 25%;
+  padding: 0.3rem 0;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -ms-flex-pack: center;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 0.5rem;
+  flex-direction: column;
 }
 
 .rong view {
-  color: #eee;
-  background: red;
-  padding: 0.3rem 0.84rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #666;
 }
 
-.rong view icon {
-  position: relative;
-  top: -0.2rem;
+.rong image {
+  margin-bottom: 0.3rem;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.rongqi {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .fu {

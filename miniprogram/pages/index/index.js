@@ -12,102 +12,7 @@ Page({
     latitude: '',
     longitude: '',
     list: [],
-    background: [{
-      list: 1,
-      arr: [{
-          title: "喂奶枕",
-          url: "icon-weinaizhen",
-          bg: "#fd9d21",
-        }, {
-          title: "婴儿车",
-          url: "icon-yingerche",
-          bg: "#ff6767",
-        },
-        {
-          title: "婴儿床",
-          url: "icon-yingerchuang",
-          bg: "#8a90fa",
-        }, {
-          title: "纸巾",
-          url: "icon-zhijin",
-          bg: "#fed030",
-        },
-        {
-          title: "鞋子",
-          url: "icon-xiezi",
-          bg: "#fd9d21",
-        }, {
-          title: "衣服",
-          url: "icon-yifu",
-          bg: "#fed030",
-        },
-        {
-          title: "手套",
-          url: "icon-shoutao",
-          bg: "#4dc6ee",
-        }, {
-          title: "口水兜",
-          url: "icon-koushuidou",
-          bg: "#ff80c2",
-        },
-        {
-          title: "袜子",
-          url: "icon-wazi",
-          bg: "#fd9d21",
-        }, {
-          title: "玩具",
-          url: "icon-wanju",
-          bg: "#A8DD99",
-        }
-      ],
-    }, {
-      list: 1,
-      arr: [{
-          title: "奶嘴",
-          url: "icon-naizui",
-          bg: "#fd9d21",
-        }, {
-          title: "奶瓶",
-          url: "icon-naiping",
-          bg: "#ff6767",
-        },
-        {
-          title: "连体衣",
-          url: "icon-liantiyi",
-          bg: "#8a90fa",
-        }, {
-          title: "内裤",
-          url: "icon-neiku",
-          bg: "#fed030",
-        },
-        {
-          title: "毛巾",
-          url: "icon-maojin",
-          bg: "#fd9d21",
-        }, {
-          title: "帽子",
-          url: "icon-maozi",
-          bg: "#fed030",
-        },
-        {
-          title: "裤子",
-          url: "icon-kuzi",
-          bg: "#4dc6ee",
-        }, {
-          title: "布袋",
-          url: "icon-fanbudai",
-          bg: "#ff80c2",
-        }, {
-          title: "礼物",
-          url: "icon-liwu",
-          bg: "#fd9d21",
-        }, {
-          title: "背心",
-          url: "icon-beixin",
-          bg: "#A8DD99",
-        }
-      ]
-    }],
+    background: [],
     indicatorDots: true,
     vertical: false,
     autoplay: false,
@@ -154,6 +59,8 @@ Page({
         })
       }
     })
+    // 获取轮播图列表
+    this.getLunSwiper()
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -303,4 +210,34 @@ Page({
       }
     })
   },
+  toSwitchPage: function(e) {
+    const obj = e.currentTarget.dataset['item'];
+    wx.navigateTo({
+      url: `../detail/index?id=${obj.id}`,
+    })
+  },
+  getLunSwiper: function() {
+    wx.request({
+      url: 'https://elm.cangdu.org/v2/index_entry',
+      success: res => {
+        const obj = [];
+        obj.push({
+          list: 1,
+          arr: res.data.slice(0, 8)
+        }, {
+          list: 2,
+          arr: res.data.slice(8)
+        })
+        this.setData({
+          background: obj
+        })
+      }
+    })
+  },
+  switchSwiperOne: function(e) {
+    const obj = e.currentTarget.dataset['item'];
+    wx.navigateTo({
+      url: `../food/index?title=${obj.title}&restaurant_category_id=${obj.id}&geohash=${this.data.latitude},${this.data.longitude}`,
+    })
+  }
 })

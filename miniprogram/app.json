@@ -6,7 +6,9 @@
     "custom-tab-bar/index",
     "pages/index/search/index",
     "pages/index/city/index",
-    "pages/index/city/change"
+    "pages/index/city/change",
+    "pages/detail/index",
+    "pages/food/index"
   ],
   "permission": {
     "scope.userLocation": {
