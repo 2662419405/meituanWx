@@ -8,7 +8,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    province: '',
     city: '',
     latitude: '',
     longitude: '',
@@ -65,7 +64,7 @@ Page({
       arr: [{
           title: "奶嘴",
           url: "icon-naizui",
-        bg: "#fd9d21",
+          bg: "#fd9d21",
         }, {
           title: "奶瓶",
           url: "icon-naiping",
@@ -137,6 +136,16 @@ Page({
   onShow: function() {
     let vm = this;
     vm.getUserLocation();
+    wx.getStorage({
+      key: 'city',
+      success: function(res) {
+        vm.setData({
+          city: res.city,
+          latitude: res.latitude,
+          longitude: res.longitude
+        })
+      },
+    })
   },
 
   /**
@@ -248,10 +257,8 @@ Page({
         longitude: longitude
       },
       success: function(res) {
-        let province = res.result.ad_info.province
         let city = res.result.ad_info.city
         vm.setData({
-          province: province,
           city: city,
           latitude: latitude,
           longitude: longitude
@@ -268,6 +275,12 @@ Page({
   getSearchValue() {
     wx.navigateTo({
       url: './search/index',
+    })
+  },
+  // 选择城市
+  changeCity() {
+    wx.navigateTo({
+      url: './city/index',
     })
   }
 })

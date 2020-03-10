@@ -3,7 +3,7 @@
   <view class="header">
     <view>
       <icon class="iconfont icon-location"></icon>
-      <text class="zhuijia">{{city}}</text>
+      <text class="zhuijia" bindtap="changeCity">{{city}}</text>
     </view>
     <view class="searchNei" bindtap="getSearchValue">
       <icon class="iconfont icon-search"></icon>
@@ -14,7 +14,7 @@
   <!-- 快捷轮播 -->
   <view class="fu">
     <view class="page-section page-section-spacing swiper">
-      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ccc" indicator-active-color="#fd9d21">
         <view class="furongqi" wx:for="{{background}}" wx:key="*this" wx:for-item="itemName">
           <swiper-item>
             <view class="rong" wx:for="{{itemName.arr}}" wx:key="*this" wx:for-item="item">
@@ -29,8 +29,13 @@
     </view>
   </view>
   <!-- 为你优选 -->
-  <view></view>
-  <!-- s神价格 -->
+  <view class="youxuan">
+    <view class="header_title">
+      <h2>为你优选</h2>
+      <span class="more">更多</span>
+    </view>
+  </view>
+  <!-- 神价格 -->
   <view></view>
   <!-- 附近商家 -->
 </view>

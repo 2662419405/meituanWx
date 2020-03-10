@@ -1,0 +1,26 @@
+<view>
+  <view class="city-nav">
+    <view class="city-top">
+      <span>当前定位城市</span>
+      <span>定位不准时，请在城市列表中选择</span>
+    </view>
+  </view>
+  <view class="kong"></view>
+  <view class="hot_city_container city">
+    <h4>热门城市</h4>
+    <ul class="citylistul clear">
+      <li wx:for="{{hot}}" wx:key="*this" bindtap="switchCity" wx:for-item="i" data-item="{{i}}">
+        {{i.name}}
+      </li>
+    </ul>
+  </view>
+  <view class="city" wx:for="{{group}}" wx:key="*this">
+    <view class="kong"></view>
+    <h4>{{index}}</h4>
+    <ul class="groupcity_name_container citylistul clear">
+      <li wx:for="{{item}}" class="ellipsis" wx:key="*this" wx:for-item="i" bindtap="switchCity" data-item="{{i}}">
+        {{i.name}}
+      </li>
+    </ul>
+  </view>
+</view>

@@ -4,7 +4,9 @@
     "pages/my/index",
     "pages/order/index",
     "custom-tab-bar/index",
-    "pages/index/search/index"
+    "pages/index/search/index",
+    "pages/index/city/index",
+    "pages/index/city/change"
   ],
   "permission": {
     "scope.userLocation": {

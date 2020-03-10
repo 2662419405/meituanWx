@@ -1,0 +1,98 @@
+.head-top {
+  background-color: #3190e8;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1.95rem;
+  padding: 5px 0;
+}
+
+.titleContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  color: #fff;
+  text-align: center;
+}
+
+.titleContent span {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.swtichCity {
+  right: 0.4rem;
+  font-size: 18px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.city-form {
+  background-color: #fff;
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+  padding-top: 40px;
+}
+
+.city-form view {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.city-form .submitCity {
+  border-radius: 0.1rem;
+  margin-bottom: 0.4rem;
+  width: 100%;
+  background-color: #3190e8;
+  font-size: 16px;
+  color: #fff;
+}
+
+.city-form .shang {
+  border: 1px solid #e4e4e4;
+  padding: 5px;
+  font-size: 16px;
+  color: #333;
+  border-radius: 0.1rem;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+}
+
+.getpois_ul {
+  background-color: #fff;
+  border-top: 1px solid #e4e4e4;
+}
+
+.getpois_ul .neiLi {
+  margin: 0 auto;
+  padding-top: 20px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.neiLi .h4name {
+  margin: 0 auto 0.35rem;
+  width: 90%;
+  font-size: 16px;
+  color: #333;
+  display: block;
+}
+
+.neiLi .textContent {
+  width: 90%;
+  margin: 0 auto 0.55rem;
+  font-size: 12px;
+  display: block;
+  color: #999;
+}
