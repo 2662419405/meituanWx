@@ -1,0 +1,125 @@
+.search_form {
+  background-color: #fff;
+  padding: 0.5rem;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.search_form_input {
+  flex: 3.5;
+  border: 0.025rem solid #e4e4e4;
+  font-size: 0.8rem;
+  color: #333;
+  border-radius: 0.125rem;
+  background-color: #f2f2f2;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+}
+
+.search_form_button {
+  flex: 1;
+  border: 0.025rem solid #3190e8;
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  color: #fff;
+  border-radius: 0.125rem;
+  background-color: #3190e8;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.4rem;
+}
+
+.kongxi {
+  flex: 0.1;
+}
+
+.historyContent {
+  font-size: 0.8rem;
+  line-height: 3rem;
+  text-indent: 0.5rem;
+  font-weight: 700;
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.clear_history {
+  background-color: #fff;
+  color: #3190e8;
+  font: 1rem/2rem Microsoft YaHei;
+  font-weight: 700;
+  line-height: 3rem;
+  text-align: center;
+}
+
+.list_li {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: "center";
+  justify-content: "center";
+  padding: 0.5rem;
+  border-bottom: 0.025rem solid #e4e4e4;
+}
+
+.item_left {
+  margin-right: 0.25rem;
+}
+
+.item_left image {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  top: 0.5rem;
+}
+
+.item_right {
+  font-size: 0.55rem;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.item_right .item_right_detail {
+  margin-top: 0.25rem;
+}
+
+.history_list {
+  background-color: #fff;
+  border-bottom: 0.025rem solid #e4e4e4;
+  font: 1rem/2rem Microsoft YaHei;
+  padding: 0.5rem 1rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.history_text {
+  display: inline-block;
+  width: 80%;
+}
+
+.hou {
+  display: inline-block;
+  width: 20%;
+  text-align: right;
+  margin-right: 0.3rem;
+  color: #666;
+  font-weight: bold;
+}
+
+.item_right_text {
+  padding-bottom: 0.25rem;
+  border-bottom: 0.025rem solid #e4e4e4;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+.kenColor icon {
+  color: rgb(232, 69, 97);
+  font-size: 1.5rem;
+  position: relative;
+  top: 0.3rem;
+}

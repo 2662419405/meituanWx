@@ -41,7 +41,7 @@ Page({
    */
   onShow: function() {
     let vm = this;
-    //vm.getUserLocation(); // 通过微信小城的api查询地址
+    //vm.getUserLocation(); // 通过微信的api查询地址
     wx.getStorage({
       key: 'city',
       success: function(res) {
