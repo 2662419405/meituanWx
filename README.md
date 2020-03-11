@@ -29,3 +29,6 @@ git clone https://github.com/2662419405/meituanWx.git
 
 用微信小程序打开即可
 
+## 效果展示
+
+![二维码](https://cdn.jsdelivr.net/gh/2662419405/CDN/tu.jpg)

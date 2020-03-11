@@ -1,17 +1,17 @@
 .header {
   display: flex;
   justify-content: flex-start;
-  font-size: 14px;
+  font-size: 0.84rem;
   flex-direction: column;
 }
 
 .zhuijia::after {
   content: " > ";
-  font-size: 10px;
+  font-size: 0.72rem;
 }
 
 .searchNei {
-  font-size: 13px;
+  font-size: 0.8rem;
   background: #eee;
   border-radius: 5px;
   padding: 0 7px 7px 7px;
@@ -19,28 +19,36 @@
 }
 
 .rong {
-  width: 20%;
-  float: left;
-  font-size: 12px;
+  width: 25%;
+  padding: 0.3rem 0;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -ms-flex-pack: center;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
+  flex-direction: column;
 }
 
 .rong view {
-  color: #eee;
-  background: red;
-  padding: 8px 12px;
-  border-radius: 50%;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.rong image {
+  margin-bottom: 0.3rem;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.rongqi {
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .fu {
-  margin: 10px 0;
+  margin: 0.5rem 0;
 }
 
 /* 为你优选 */
@@ -48,20 +56,220 @@
 .youxuan {
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  font-size: 0.72rem;
 }
 
 .header_title {
   display: flex;
   justify-content: space-between;
-  line-height: 20px;
+  line-height: 0.96rem;
 }
 
 .header_title h2 {
-  font-size: 20px;
+  font-size: 0.96rem;
 }
 
 .more::after {
   content: " > ";
+  font-size: 0.5rem;
+}
+
+.shop_list_container {
+  background-color: #fff;
+}
+
+.shop_list_top text {
+  font-size: 0.84rem;
+}
+
+.shop_list_top icon {
+  margin: 0 5px;
+}
+
+.yanse {
+  color: #999;
+}
+
+.shop_list_li {
+  display: flex;
+  border-bottom: 0.025rem solid #f1f1f1;
+  padding: 0.84rem 0.2rem;
+}
+
+.avatarImg image {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: block;
+  margin-right: 0.5rem;
+}
+
+.shop_right_header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.shop_right_header .shop_title {
+  width: 8.5rem;
+  color: #333;
+  padding-top: 0.01rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.shop_right_header .shop_title::before {
+  content: "品牌";
+  display: inline-block;
+  font-size: 0.5rem;
+  line-height: 1rem;
+  color: #333;
+  background-color: #ffd930;
+  padding: 0 0.1rem;
+  border-radius: 0.1rem;
+  margin-right: 0.3rem;
+}
+
+.shop_detail_ul {
+  display: flex;
+  transform: scale(0.8);
+  margin-right: -.3rem;
+}
+
+.shop_detail_ul .supports {
+  font-size: 0.5rem;
+  color: #999;
+  border: 0.025rem solid #f1f1f1;
+  padding: 0 0.04rem;
+  border-radius: 0.08rem;
+  margin-left: 0.05rem;
+}
+
+.shop_right {
+  flex: auto;
+}
+
+.shop_right_order {
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 0.72rem;
+  margin-top: 0.52rem;
+}
+
+.rating_order_num_right {
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  transform: scale(0.7);
+  min-width: 5rem;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-right: -.8rem;
+}
+
+.rating_order_num_left {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.delivery_style {
   font-size: 10px;
+  padding: 0.2rem 0.3rem 0;
+  border-radius: 0.1rem;
+  margin-left: 0.1rem;
+}
+
+.delivery_left {
+  color: #fff;
+  background-color: #3190e8;
+  border: 0.025rem solid #3190e8;
+}
+
+.delivery_right {
+  color: #3190e8;
+  border: 0.025rem solid #3190e8;
+}
+
+.order_section {
+  transform: scale(0.8);
+  margin-left: -.2rem;
+  font-size: 0.84rem;
+  color: #666;
+}
+
+.rating_num {
+  font-size: 0.84rem;
+  color: #ff6000;
+  margin-right: 0.35rem;
+}
+
+.rating_container {
+  position: relative;
+  top: -0.2rem;
+  width: 3.3rem;
+}
+
+.rating_section {
+  display: flex;
+}
+
+.star_container icon {
+  font-size: 0.5rem;
+  color: #ccc;
+}
+
+.star_overflow icon {
+  font-size: 0.5rem;
+  color: #ff9a0d;
+}
+
+.star_overflow {
+  position: relative;
+  height: 100%;
+  top: -1.2rem;
+}
+
+.star_container {
+  position: absolute;
+  display: -ms-flexbox;
+  display: flex;
+  width: 2rem;
+  height: 0.4rem;
+  top: -0.55rem;
+  left: -.02rem;
+}
+
+.fee_distance {
+  margin-top: 1rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 0.5rem;
+  color: #333;
+}
+
+.fee {
+  transform: scale(0.9);
+  font-size: 0.72rem;
+  color: #666;
+}
+
+.distance_time {
+  font-size: 0.72rem;
+  color: #666;
+}
+
+.distance_time .gaiColor {
+  color: #3190e8;
+}
+
+.segmentation {
+  display: inline-block;
+  margin: 0 0.1rem;
 }

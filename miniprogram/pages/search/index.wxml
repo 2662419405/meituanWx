@@ -1,0 +1,45 @@
+<view>
+  <!-- 搜索栏  -->
+  <view class="search_form">
+    <input value="{{value}}" placeholder="请输入商家或美食名称" bindinput="changeKey" class="search_form_input"></input>
+    <view class="kongxi"></view>
+    <button bindtap="submitKeyWord" class="search_form_button">提交</button>
+  </view>
+  <!-- 历史记录栏 -->
+  <view class="search_history" wx:if="{{history.length>0&&list.length==0}}">
+    <view class="historyContent">搜索历史</view>
+    <view class="historyContainer">
+      <view class="history_list" wx:for="{{history}}" wx:key="*this">
+        <view class="history_text ellipsis" data-item="{{item}}" bindtap="xuanzeHistory">{{item}}</view>
+        <view class="hou" data-index="{{index}}" bindtap="clearHuanCun">X</view>
+      </view>
+    </view>
+    <view class="clear_history" bindtap="clearStorageBtn">
+      清空搜索历史
+    </view>
+  </view>
+  <!-- 结果栏 -->
+  <view class="search_result" wx:if="{{list.length>0}}">
+    <view class="historyContent">商家</view>
+    <view class="list_container">
+      <view class="list_li" data-item="{{item}}" bindtap="switchOne" wx:for="{{list}}" wx:key="*this">
+        <view class="item_left">
+          <image src="//elm.cangdu.org/img/{{item.image_path}}"></image>
+        </view>
+        <view class="item_right">
+          <view class="item_right_text">
+            <view class="kenColor">{{item.name}}
+              <icon class="iconfont icon-zhifudingdan"></icon>
+            </view>
+            <view>月售{{item.recent_order_num}}单</view>
+            <view>
+              ¥{{item.float_minimum_order_amount}}起送
+              <text class="segmentation">/</text> 配送费约¥{{item.float_delivery_fee}}
+            </view>
+          </view>
+          <view class="item_right_detail"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
