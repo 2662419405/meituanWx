@@ -23,7 +23,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  async onLoad(options) {
     qqmapsdk = new QQMapWX({
       key: 'UMHBZ-VA7W3-RMO35-YEJAA-ZF4J7-REFNV' //这里自己的key秘钥进行填充
     });
@@ -188,8 +188,8 @@ Page({
   },
   // 开始搜索内容
   getSearchValue() {
-    wx.navigateTo({
-      url: './search/index',
+    wx.switchTab({
+      url: '../search/index',
     })
   },
   // 选择城市

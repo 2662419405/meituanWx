@@ -1,2 +1,98 @@
-<!--miniprogram/pages/food/index.wxml-->
-<text>miniprogram/pages/food/index.wxml</text>
+<view class="food_container">
+  <view class="header_title">{{title}}</view>
+  <view class="sort_container" id="the-id">
+    <view class="sort_item {{index==1?'choose_type':null}}" bindtap="showZhe" data-index="1">
+      <view class="sort_item_container">
+        <text>美食</text>
+        <icon class="iconfont icon-down-fill"></icon>
+      </view>
+    </view>
+    <view class="sort_item {{index==2?'choose_type':null}}" bindtap="showZhe" data-index="2">
+      <view class="sort_item_container">
+        <text>排序</text>
+        <icon class="iconfont icon-down-fill"></icon>
+      </view>
+      <view class="sort_detail_type" style="transform:{{index==2?null:'translateY(-100%)'}}">
+        <view class="sort_list_container">
+          <view class="sort_list_li" wx:for="{{sortData}}" wx:key="*this">
+            <icon style="color:rgb({{item.color}})" class="iconfont yang {{item.icon}}"></icon>
+            <view class="wenben {{item.biao==order_by?'sort_select':null}}" bindtap="xuanzeBiao" data-item="{{item.biao}}">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="sort_item {{index==3?'choose_type':null}}" bindtap="showZhe" data-index="3">
+      <view class="sort_item_container">
+        <text>筛选</text>
+        <icon class="iconfont icon-down-fill"></icon>
+      </view>
+    </view>
+  </view>
+  <!-- 遮罩层开始 -->
+  <view class="back_cover" bindtap="hideZhe" style="opacity:{{show?'1':'0'}}"></view>
+  <!-- 遮罩层结束 -->
+  <view class="shop_list_container jiakuan">
+    <view class="shop_list_top">
+      <icon class="iconfont icon-shangjia"></icon>
+      <text class="yanse">附近商家</text>
+    </view>
+    <view class="shoplist_container">
+      <view class="fuyuansuList">
+        <view wx:key="*this" wx:for="{{list}}" bindtap="toSwitchPage" data-item="{{item}}" class="shop_list_li">
+          <view class="avatarImg">
+            <image src="https://elm.cangdu.org/img/{{item.image_path}}"></image>
+          </view>
+          <!-- 详情右侧展示 -->
+          <view class="shop_right">
+            <view class="shop_right_header">
+              <view class="shop_title ellipsis premium">
+                {{item.name}}
+              </view>
+              <view class="shop_detail_ul">
+                <view class="supports" wx:key="*this" wx:for="{{item.supports}}" wx:for-item="supports">
+                  {{supports.icon_name}}
+                </view>
+              </view>
+            </view>
+            <view class="shop_right_order">
+              <view class="rating_order_num_left">
+                <view class="rating_section">
+                  <view class="rating_container">
+                    <!-- 五角星 -->
+                    <!-- <view class="star_container">
+                      <icon wx:for="{{5}}" class="iconfont icon-wujiaoxingxingxingshoucang"></icon>
+                    </view> -->
+                    <view class="star_overflow" style="width:{{item.rating*20}}%">
+                      <icon wx:key="*this" wx:for="{{5}}" class="iconfont icon-wujiaoxingxingxingshoucang"></icon>
+                    </view>
+                  </view>
+                  <view class="rating_num">{{item.rating}}</view>
+                </view>
+                <view class="order_section">
+                  月售{{item.recent_order_num}}单
+                </view>
+              </view>
+              <view class="rating_order_num_right">
+                <view class="delivery_style delivery_left">
+                  {{item.delivery_mode.text}}
+                </view>
+                <view class="delivery_style delivery_right">准时达</view>
+              </view>
+            </view>
+            <view class="fee_distance">
+              <view class="fee">
+                ¥{{item.float_minimum_order_amount}}起送
+                <text class="segmentation">/</text> 配送费约¥{{item.float_delivery_fee}}
+              </view>
+              <view class="distance_time">
+                <text>{{item.distance}}</text>
+                <text class="segmentation">/</text>
+                <text class="gaiColor">{{item.order_lead_time}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

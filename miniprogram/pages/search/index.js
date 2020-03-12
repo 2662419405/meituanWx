@@ -9,7 +9,8 @@ Page({
     longitude: "",
     history: [],
     list: [],
-    value: ""
+    value: "",
+    message: ""
   },
 
   /**
@@ -62,7 +63,8 @@ Page({
   onHide: function() {
     this.setData({
       list: [],
-      value: ""
+      value: "",
+      message: ""
     })
   },
 
@@ -112,9 +114,16 @@ Page({
     wx.request({
       url: `https://elm.cangdu.org/v4/restaurants?geohash=${this.data.latitude},${this.data.longitude}&keyword=${this.data.value}`,
       success: res => {
-        this.setData({
-          list: res.data
-        })
+        if (res.data.status == 0) {
+          this.setData({
+            message: res.data.message
+          })
+        } else {
+          this.setData({
+            list: res.data,
+            message: ""
+          })
+        }
       }
     })
   },
