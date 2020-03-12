@@ -1,3 +1,20 @@
+const wxApiInterceptors = require('./wxApiInterceptors');
+
+wx.newWx = wxApiInterceptors({
+  showModal: {
+    request(params) {
+      if (params.confirmColor === undefined) {
+        params.confirmColor = 'red';
+      }
+      return params;
+    },
+    response(res) {
+      res = '调用成功';
+      return res;
+    },
+  }
+}, true);
+
 //app.js
 App({
   onLaunch: function() {
@@ -32,7 +49,7 @@ App({
     }
 
     this.globalData = {
-      
+
     }
   }
 })

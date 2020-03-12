@@ -1,3 +1,24 @@
+.header_title {
+  background-color: #3190e8;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2.5rem;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  line-height: 2.5rem;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+}
+
+.rongqi {
+  padding-top: 2.5rem;
+}
+
 .search_form {
   background-color: #fff;
   padding: 0.5rem;
@@ -122,4 +143,10 @@
   font-size: 1.5rem;
   position: relative;
   top: 0.3rem;
+}
+
+.errorMessage {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 3rem;
 }
