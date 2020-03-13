@@ -1,3 +1,60 @@
-<view>
-  
+<view class="shop_container">
+  <!-- 头部页面 -->
+  <view class="shop_detail_header">
+    <image class="header_cover_img" src="//elm.cangdu.org/img/{{detail.image_path}}"></image>
+    <view class="description_header">
+      <view class="description_top">
+        <view class="description_left">
+          <image src="//elm.cangdu.org/img/{{detail.image_path}}"></image>
+        </view>
+        <view class="description_right">
+          <view class="description_right_header">{{detail.name}}</view>
+          <view class="description_text">商家配送／分钟送达／{{detail.piecewise_agent_fee.tips}}</view>
+          <view class="description_promotion ellipsis">公告: {{detail.promotion_info}}</view>
+        </view>
+        <view class="moreRight"> > </view>
+      </view>
+      <view class="description_footer" bindtap="changeFooter">
+        <view class="ellipsis ziding">
+          <view class="wenbenJian">减</view>
+          <view wx:if="{{detail.activities.length===0}}">目前商家暂无活动,尽情期待</view>
+          <view wx:else>{{detail.activities[0].description}}（APP专享）</view>
+        </view>
+        <view class="marginLeft10">{{detail.activities.length}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 遮罩层部分 -->
+  <view class="activities_details" wx:if="{{show}}">
+    <view class="activities_shoptitle">{{detail.name}}</view>
+    <view class="activities_list">
+      <view class="activities_title_style">
+        <text class="activities_title_style_content">优惠信息</text>
+      </view>
+      <view>
+        <view class="weixinListBiao" wx:for="{{detail.activities}}" wx:key="*this">
+          <view class="ellipsis ziding">
+            <view class="wenbenJian">减</view>
+            <view>{{item.description}}（APP专享）</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="activities_list">
+      <view class="activities_title_style">
+        <text class="activities_title_style_content">商家公告</text>
+      </view>
+      <view>
+        <view class="ellipsis ziding">
+          <view>{{detail.promotion_info}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="close_activities" bindtap="closeZhe">
+      X
+    </view>
+  </view>
+  <!-- 中间选择部分 -->
+  <!-- 商品列表部分 -->
+  <!-- 尾部下单部分 -->
 </view>

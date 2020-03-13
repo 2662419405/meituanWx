@@ -1,1 +1,179 @@
-/* miniprogram/pages/detail/index.wxss */
+.shop_detail_header {
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.description_header {
+  position: relative;
+  z-index: 10;
+  background-color: rgba(119, 103, 137, 0.43);
+  padding: 0.8rem 0 0.8rem 0.8rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.shop_container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 100%;
+}
+
+.header_cover_img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+}
+
+.description_top {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.description_left {
+  margin-right: 0.3rem;
+}
+
+.description_left image {
+  width: 4.4rem;
+  height: 4.4rem;
+  display: block;
+  border-radius: 0.2rem;
+}
+
+.description_right {
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.description_right_header {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 0.3rem;
+}
+
+.description_text {
+  font-size: 0.8rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.description_promotion {
+  font-size: 0.8rem;
+  color: #fff;
+  width: 14rem;
+}
+
+.moreRight {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  right: 1rem;
+  z-index: 11;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.wenbenJian {
+  padding: 0 0.04rem;
+  border: 0.025rem solid #fff;
+  border-radius: 0.1rem;
+  font-size: 0.7rem;
+  display: inline-block;
+  background-color: rgb(240, 115, 115);
+  border-color: rgb(240, 115, 115);
+  margin-right: 0.3rem;
+}
+
+.description_footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding-right: 1rem;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.ziding {
+  display: flex;
+}
+
+/* 遮罩层样式表 */
+
+.activities_details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #262626;
+  z-index: 200;
+  padding: 1.5rem;
+}
+
+.activities_shoptitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.activities_ratingstar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  transform: scale(2.2);
+  margin-top: 1rem;
+}
+
+.activities_list {
+  margin-top: 3rem;
+  margin-bottom: 1.4rem;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.activities_title_style {
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+.activities_title_style text {
+  font-size: 0.8rem;
+  color: #fff;
+  border: 0.04rem solid #555;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.8rem;
+}
+
+.close_activities {
+  bottom: 1rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 0.7rem 1.4rem;
+}
+
+.weixinListBiao {
+  margin-bottom: 1rem;
+}
+
+.marginLeft10 {
+  margin-right: 0.2rem;
+}
