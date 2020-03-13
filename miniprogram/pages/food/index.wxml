@@ -1,30 +1,104 @@
 <view class="food_container">
   <view class="header_title">{{title}}</view>
   <view class="sort_container" id="the-id">
-    <view class="sort_item {{index==1?'choose_type':null}}" bindtap="showZhe" data-index="1">
-      <view class="sort_item_container">
+    <view class="sort_item {{index==1?'choose_type':null}}">
+      <view class="sort_item_container" data-index="1" bindtap="showZhe">
         <text>美食</text>
         <icon class="iconfont icon-down-fill"></icon>
       </view>
-    </view>
-    <view class="sort_item {{index==2?'choose_type':null}}" bindtap="showZhe" data-index="2">
-      <view class="sort_item_container">
-        <text>排序</text>
-        <icon class="iconfont icon-down-fill"></icon>
-      </view>
-      <view class="sort_detail_type" style="transform:{{index==2?null:'translateY(-100%)'}}">
-        <view class="sort_list_container">
-          <view class="sort_list_li" wx:for="{{sortData}}" wx:key="*this">
-            <icon style="color:rgb({{item.color}})" class="iconfont yang {{item.icon}}"></icon>
-            <view class="wenben {{item.biao==order_by?'sort_select':null}}" bindtap="xuanzeBiao" data-item="{{item.biao}}">{{item.title}}</view>
+      <!-- 美食列表 -->
+      <view class="sort_detail_type" style="transform:{{index==1?null:'translateY(-100%)'}}">
+        <view class="category_container sort_list_container">
+          <view class="category_left">
+            <view>
+              <view bindtap="swtichMeiShiList" data-index="{{index}}" class="category_left_li {{indexTwo==index?'category_active':null}}" wx:for="{{category}}" wx:key="*this">
+                <view>
+                  <image class="category_icon" src="{{item.image_url}}"></image>
+                  <text>{{item.name}}</text>
+                </view>
+                <view class="zong">
+                  <view class="category_count">
+                    {{item.count}}
+                  </view>
+                  <view class="weitiao"> > </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="category_right">
+            <view>
+              <view data-i="{{item.id}}" bindtap="swtichMeiShiDetail" data-index="{{index}}" class="category_right_li {{indexThree==index?'category_right_choosed':null}}" wx:for="{{category[indexTwo].sub_categories}}" wx:key="*this">
+                <view>
+                  {{item.name}}
+                </view>
+                <view>
+                  {{item.count}}
+                </view>
+              </view>
+            </view>
           </view>
         </view>
       </view>
     </view>
-    <view class="sort_item {{index==3?'choose_type':null}}" bindtap="showZhe" data-index="3">
-      <view class="sort_item_container">
+    <view class="sort_item {{index==2?'choose_type':null}}">
+      <view class="sort_item_container" data-index="2" bindtap="showZhe">
+        <text>排序</text>
+        <icon class="iconfont icon-down-fill"></icon>
+      </view>
+      <!-- 排序列表 -->
+      <view class="sort_detail_type" style="transform:{{index==2?null:'translateY(-100%)'}}">
+        <view class="sort_list_container">
+          <view class="sort_list_li" wx:for="{{sortData}}" wx:key="*this">
+            <icon style="color:rgb({{item.color}})" class="iconfont yang {{item.icon}}"></icon>
+            <view class="wenben {{item.biao==order_by?'sort_select':null}}" bindtap="xuanzeBiao" data-item="{{item.biao}}">{{item.title}}
+              <icon class="iconfont pianzuo {{item.biao==order_by?'icon-dui':null}}"></icon>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 排序列表 -->
+    </view>
+    <view class="sort_item {{index==3?'choose_type':null}}">
+      <view class="sort_item_container" bindtap="showZhe" data-index="3">
         <text>筛选</text>
         <icon class="iconfont icon-down-fill"></icon>
+      </view>
+      <!-- 筛选列表 -->
+      <view class="sort_detail_type filter_container" style="transform:{{index==3?null:'translateY(-100%)'}}">
+        <view class="peisongRong">
+          <view class="headerRong">配送方式</view>
+          <view class="filter_ul">
+            <view bindtap="swtichPeiSongFang" class="filter_li" wx:key="*this" wx:for="{{delivery_modes}}">
+              <block wx:if="{{xianPei}}">
+                <icon class="iconfont icon-dui"></icon>
+              </block>
+              <block wx:else>
+                <icon class="iconfont icon-fengniao"></icon>
+              </block>
+              <view class="wenbenText {{xianPei?'selected_filter':null}}">{{item.text}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="peisongRong">
+          <view class="headerRong">商家属性(可以多选)</view>
+          <view class="filter_ul">
+            <view class="filter_li" data-index="{{index}}" data-item="{{item}}" bindtap="xuanzeShuxing" wx:key="*this" wx:for="{{activity_attributes}}">
+
+              <view wx:if="{{support_ids[index]===true}}">
+                <icon class="iconfont icon-dui"></icon>
+              </view>
+              <view wx:else>
+                <view style="color:#{{item.icon_color}};border:1px solid #{{item.icon_color}}" class="rongqiText">{{item.icon_name}}</view>
+              </view>
+              <view class="wenbenText {{support_ids[index]===true?'selected_filter':null}}">{{item.name}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="peisongRong"></view>
+        <view class="confirm_filter">
+          <view bindtap="clearShaiXuan" class="clear_all filter_button_style">清空</view>
+          <view bindtap="fasongData" class="confirm_select filter_button_style">确定{{shu+delivery_mode.length>0?'('+(shu+delivery_mode.length)+')':''}}</view>
+        </view>
       </view>
     </view>
   </view>
