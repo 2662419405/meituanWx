@@ -318,5 +318,12 @@ Page({
   fasongData: function() {
     this.getDefaultListData()
     this.hideZhe()
+  },
+  // 选择页面
+  toSwitchPage: function(e) {
+    const obj = e.currentTarget.dataset['item'];
+    wx.navigateTo({
+      url: `../detail/index?id=${obj.id}`,
+    })
   }
 })

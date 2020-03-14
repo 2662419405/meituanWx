@@ -103,7 +103,7 @@
     </view>
   </view>
   <!-- 遮罩层开始 -->
-  <view class="back_cover" bindtap="hideZhe" style="opacity:{{show?'1':'0'}}"></view>
+  <view class="back_cover" bindtap="hideZhe" style="display:{{show?'block':'none'}}"></view>
   <!-- 遮罩层结束 -->
   <view class="shop_list_container jiakuan">
     <view class="shop_list_top">

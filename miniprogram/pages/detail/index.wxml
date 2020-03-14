@@ -1,3 +1,138 @@
-<view>
-  
+<view class="shop_container">
+  <view class="fieTopDetail">
+    <!-- 头部页面 -->
+    <view class="shop_detail_header">
+      <image class="header_cover_img" src="//elm.cangdu.org/img/{{detail.image_path}}"></image>
+      <view class="description_header">
+        <view class="description_top">
+          <view class="description_left">
+            <image src="//elm.cangdu.org/img/{{detail.image_path}}"></image>
+          </view>
+          <view class="description_right">
+            <view class="description_right_header">{{detail.name}}</view>
+            <view class="description_text">商家配送／分钟送达／{{detail.piecewise_agent_fee.tips}}</view>
+            <view class="description_promotion ellipsis">公告: {{detail.promotion_info}}</view>
+          </view>
+          <view class="moreRight"> > </view>
+        </view>
+        <view class="description_footer" bindtap="changeFooter">
+          <view class="ellipsis ziding">
+            <view class="wenbenJian">减</view>
+            <view wx:if="{{detail.activities.length===0}}">目前商家暂无活动,尽情期待</view>
+            <view wx:else>{{detail.activities[0].description}}（APP专享）</view>
+          </view>
+          <view class="marginLeft10">{{detail.activities.length}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 中间选择部分 -->
+    <view class="change_show_type">
+      <view data-index="1" bindtap="xuanShangPin">
+        <text class="{{index==1?'activity_show':null}}">商品</text>
+      </view>
+      <view data-index="2" bindtap="xuanShangPin">
+        <text class="{{index==2?'activity_show':null}}">评论</text>
+      </view>
+    </view>
+  </view>
+  <!-- 遮罩层部分 -->
+  <view class="activities_details" wx:if="{{show}}">
+    <view class="activities_shoptitle">{{detail.name}}</view>
+    <view class="activities_list">
+      <view class="activities_title_style">
+        <text class="activities_title_style_content">优惠信息</text>
+      </view>
+      <view>
+        <view class="weixinListBiao" wx:for="{{detail.activities}}" wx:key="*this">
+          <view class="ellipsis ziding">
+            <view class="wenbenJian">减</view>
+            <view>{{item.description}}（APP专享）</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="activities_list">
+      <view class="activities_title_style">
+        <text class="activities_title_style_content">商家公告</text>
+      </view>
+      <view>
+        <view class="ellipsis ziding">
+          <view>{{detail.promotion_info}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="close_activities" bindtap="closeZhe">
+      X
+    </view>
+  </view>
+  <view class="bottomContent">
+    <!-- 商品列表部分 -->
+    <view class="food_container" style="display:{{index==1?'blcok':'none'}}"></view>
+    <!-- 评论部分  -->
+    <view class="rating_container" style="display:{{index==2?'blcok':'none'}}">
+      <view class="rating_container_view">
+        <view class="rating_header">
+          <view class="rating_header_left">
+            <view>{{scores.food_score}}</view>
+            <view>综合评价</view>
+            <view>高于周边商家{{scores.compare_rating*100}}%</view>
+          </view>
+          <view class="rating_header_right">
+            <view>
+              <view class="yangshi">服务态度</view>
+              <view class="xiangyou">
+                <view class="star_overflow">
+                  <icon wx:key="*this" wx:for="{{5}}" class="iconfont icon-wujiaoxingxingxingshoucang"></icon>
+                </view>
+              </view>
+              <view class="rating_num">{{scores.overall_score}}</view>
+            </view>
+            <view>
+              <view class="yangshi">菜品评价</view>
+              <view class="xiangyou">
+                <view class="star_overflow">
+                  <icon wx:key="*this" wx:for="{{5}}" class="iconfont icon-wujiaoxingxingxingshoucang"></icon>
+                </view>
+              </view>
+              <view class="rating_num">{{scores.service_score}}</view>
+            </view>
+            <view>
+              <view class="yangshi">达到时间</view>
+              <view>{{scores.deliver_time}}分钟</view>
+            </view>
+          </view>
+        </view>
+        <view class="kongxiContent"></view>
+        <view class="tag_list_ul">
+          <view data-index="{{index}}" bindtap="changeIndexTwo" class="{{indexTwo===index?'tagActivity':null}}" wx:key="*this" wx:for="{{tags}}">
+            {{item.name}} ({{item.count}})
+          </view>
+        </view>
+        <view class="rating_list_ul">
+          <view class="rating_list_li" wx:for="{{ratings}}" wx:key="*this">
+            <image class="user_avatar" src="{{item.avatar}}"></image>
+            <view class="rating_list_details">
+              <view class="rating_header_title">
+                <view class="username_star">
+                  <view>{{item.username}}</view>
+                  <view class="star_desc">
+                    <view class="star_overflow">
+                      <icon wx:key="*this" wx:for="{{5}}" class="iconfont icon-wujiaoxingxingxingshoucang"></icon>
+                    </view>
+                    <view class="time_spent_desc">{{item.time_spent_desc}}</view>
+                  </view>
+                </view>
+                <view class="rated_at">{{item.rated_at}}</view>
+              </view>
+              <view class="food_name_ul">
+                <view wx:for-item="i" wx:for="{{item.item_ratings}}" wx:key="*this" class="ellipsis">
+                  {{i.food_name}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

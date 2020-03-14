@@ -301,6 +301,7 @@
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.3);
   transition: all 0.3s;
+  display: none;
 }
 
 .sort_detail_type {
@@ -530,4 +531,3 @@
 .category_right .category_right_choosed view {
   color: #3190e8;
 }
-
