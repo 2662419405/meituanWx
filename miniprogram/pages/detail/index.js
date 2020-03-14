@@ -7,6 +7,8 @@ Page({
   data: {
     latitude: "",
     longitude: "",
+    index: 1, //评论和商品的选项卡
+    indexTwo: 0, //选择的评论分类
     show: false, // 遮罩层
     id: '', // 商品id
     tags: [], // 评论分类页面
@@ -98,11 +100,16 @@ Page({
         this.setData({
           tags: res.data
         })
+
       }
     })
     wx.request({
       url: `https://elm.cangdu.org/ugc/v2/restaurants/${id}/ratings/scores`,
       success: res => {
+        res.data.food_score = res.data.food_score.toFixed(1)
+        res.data.overall_score = res.data.overall_score.toFixed(1)
+        res.data.service_score = res.data.service_score.toFixed(1)
+        res.data.compare_rating = res.data.compare_rating.toFixed(3)
         this.setData({
           scores: res.data
         })
@@ -117,10 +124,21 @@ Page({
       }
     })
     wx.request({
-      url: `https://elm.cangdu.org/shopping/v2/menu?restaurant_id=${id}`,
+      url: `https://elm.cangdu.org/ugc/v2/restaurants/${id}/ratings?has_content=true&offset=0&limit=10&tag_name=`,
       success: res => {
+        var arr = res.data.filter(v => {
+          let back = "";
+          if (v.avatar.substring(v.avatar.length - 3) == "png") {
+            back = "png"
+          } else if (v.avatar.substring(v.avatar.length - 4) == "jpeg") {
+            back = "jpeg"
+          } else {
+            return v.avatar = "//elm.cangdu.org/img/default.jpg"
+          }
+          return v.avatar = "https://fuss10.elemecdn.com/" + v.avatar.substr(0, 1) + "/" + v.avatar.substr(1, 2) + "/" + v.avatar.substr(3) + "." + back
+        })
         this.setData({
-          menu: res.data
+          ratings: arr
         })
       }
     })
@@ -150,6 +168,22 @@ Page({
   closeZhe: function() {
     this.setData({
       show: false
+    })
+  },
+  /**
+   * 选择商品
+   */
+  xuanShangPin: function(e) {
+    const index = e.currentTarget.dataset.index;
+    this.setData({
+      index
+    })
+  },
+  // 选择评论列表
+  changeIndexTwo: function(e) {
+    const index = e.currentTarget.dataset.index;
+    this.setData({
+      indexTwo: index
     })
   }
 })
