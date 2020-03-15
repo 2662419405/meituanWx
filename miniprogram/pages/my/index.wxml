@@ -1,2 +1,3 @@
-<!--miniprogram/pages/my/index.wxml-->
-<text>miniprogram/pages/my/index.wxml</text>
+<view>
+    我的页面
+</view>
