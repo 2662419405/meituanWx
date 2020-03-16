@@ -1,3 +1,41 @@
 <view>
-    我的页面
+  <view class="head_top">
+    <view class="title_head ellipsis">
+      <view class="title_text">我的</view>
+    </view>
+  </view>
+  <view>
+    <view class="profile-number">
+      <view class="tiaozhuan">
+        <!-- 没有登录显示的信息 -->
+        <block wx:if="{{!hasUserInfo && canIUse}}">
+          <view class="privateImage">
+            <image src="https://img.meituan.net/avatar/4ba9758be0a301ef9e3d8f45e472b1563720.jpg"></image>
+          </view>
+          <view class="user-info">
+            <button class="xiugai" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取用户信息 </button>
+            <view class="user-info-phone">
+              <icon class="icon-shouji iconfont bianda"></icon>
+              暂无手机号信息
+            </view>
+          </view>
+          <view class="arrow"> > </view>
+        </block>
+        <!-- 有用户之后显示的信息 -->
+        <block wx:else>
+          <view class="privateImage">
+            <image src="{{userInfo.avatarUrl}}"></image>
+          </view>
+          <view class="user-info">
+            <view class="xiugai">{{userInfo.nickName}}</view>
+            <view class="user-info-phone">
+              <icon class="icon-shouji iconfont bianda"></icon>
+              暂无手机号信息
+            </view>
+          </view>
+          <view class="arrow"> > </view>
+        </block>
+      </view>
+    </view>
+  </view>
 </view>

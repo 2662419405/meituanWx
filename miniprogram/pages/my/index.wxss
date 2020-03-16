@@ -1,1 +1,91 @@
-/* miniprogram/pages/my/index.wxss */
+.head_top {
+  background-color: #3190e8;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.title_head {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  color: #fff;
+  text-align: center;
+}
+
+.title_text {
+  font-size: 1.1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.profile-number {
+  padding-top: 2.5rem;
+}
+
+.xiugai {
+  background: #3190e8;
+  border: none;
+  outline: none;
+}
+
+.tiaozhuan {
+  display: block;
+  display: -ms-flexbox;
+  display: flex;
+  box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #3190e8;
+  padding: 1rem;
+  color: #fff;
+}
+
+.privateImage {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.privateImage image {
+  background: #fff;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+.arrow {
+  width: 0.6rem;
+  height: 1.2rem;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.user-info {
+  margin-left: 0.65rem;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.xiugai {
+  color: #fff;
+  margin-left: 0;
+  margin: 0 !important;
+  width: auto;
+  text-align: left;
+  padding: 8px 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.bianda {
+  font-size: 1rem;
+}

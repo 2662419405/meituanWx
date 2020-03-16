@@ -74,9 +74,9 @@
             <text>{{item.name}}</text>
           </view>
         </view>
-        <view class="menu_right">
+        <view class="menu_right" id="swiperSh">
           <view class="right_rong_content">
-            <view wx:for="{{menu}}" wx:key="*this">
+            <view class="myContentSwiper" wx:for="{{menu}}" wx:key="*this">
               <view class="menu_detail_header">
                 <view class="menu_detail_header_left">
                   <view class="menu_item_title">{{item.name}}</view>
@@ -94,7 +94,7 @@
                       <view class="description_foodname">
                         {{j.name}}</view>
                       <view class="foodsRongQiList">
-                        <view wx:for-item="foodItem" wx:for="{{j.attributes}}">
+                        <view wx:key="*this" wx:for-item="foodItem" wx:for="{{j.attributes}}">
                           <view class="xiaoFoods" style="color:#{{foodItem.icon_color}};border:1px solid #{{foodItem.icon_color}}">{{foodItem.icon_name}}</view>
                         </view>
                       </view>
