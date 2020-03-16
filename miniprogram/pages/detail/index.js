@@ -9,6 +9,7 @@ Page({
     longitude: "",
     index: 1, //评论和商品的选项卡
     indexTwo: 0, //选择的评论分类
+    indexThree: 0, //右侧选择的数据
     show: false, // 遮罩层
     id: '', // 商品id
     tags: [], // 评论分类页面
@@ -184,6 +185,13 @@ Page({
     const index = e.currentTarget.dataset.index;
     this.setData({
       indexTwo: index
+    })
+  },
+  // 选择左侧
+  xuanzeLeftContent: function(e) {
+    const index = e.currentTarget.dataset.index;
+    this.setData({
+      indexThree: index
     })
   }
 })
