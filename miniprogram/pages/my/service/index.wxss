@@ -1,1 +1,109 @@
-/* miniprogram/pages/my/service/index.wxss */
+.head_top {
+  background-color: #3190e8;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.title_head {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  color: #fff;
+  text-align: center;
+}
+
+.title_text {
+  font-size: 1.1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.container_top_25 {
+  margin-top: 2.5rem;
+}
+
+.service_connect {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.service_left {
+  -ms-flex: 1;
+  flex: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 6rem;
+  border-bottom: 1px solid #f5f5f5;
+  border-right: 1px solid #f5f5f5;
+}
+
+.service_right {
+  -ms-flex: 1;
+  flex: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 6rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.rengongkefu {
+  color: rgb(255, 123, 82);
+}
+
+.dianhuakefu {
+  color: rgb(106, 194, 11);
+}
+
+.service_connect icon {
+  font-size: 2rem;
+}
+
+.qustion_header {
+  font-size: 1rem;
+  color: #333;
+  line-height: 4rem;
+  border-bottom: 1px solid #f5f5f5;
+  padding-left: 0.9rem;
+}
+
+.question_title {
+  padding: 0 0.9rem;
+  line-height: 3rem;
+  border-bottom: 1px solid #f5f5f5;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #666;
+}
+
+.xiugaiYang {
+  border: none;
+  background: #fff;
+  font-size: 0.9rem;
+  font-weight: normal;
+  padding: 0;
+}
