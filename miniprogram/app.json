@@ -9,7 +9,14 @@
     "pages/index/city/change",
     "pages/detail/index",
     "pages/food/index",
-    "pages/search/index"
+    "pages/search/index",
+    "pages/my/balance/index",
+    "pages/my/activity/index",
+    "pages/my/benefit/index",
+    "pages/my/download/index",
+    "pages/my/points/index",
+    "pages/my/service/index",
+    "pages/my/vipcard/index"
   ],
   "permission": {
     "scope.userLocation": {

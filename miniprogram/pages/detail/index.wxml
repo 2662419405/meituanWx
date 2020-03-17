@@ -67,7 +67,87 @@
   </view>
   <view class="bottomContent">
     <!-- 商品列表部分 -->
-    <view class="food_container" style="display:{{index==1?'blcok':'none'}}"></view>
+    <view class="food_container" style="display:{{index==1?'block':'none'}}">
+      <view class="menu_container">
+        <view class="menu_left">
+          <view data-index="{{index}}" bindtap="xuanzeLeftContent" class="menu_left_li {{indexThree==index?'activity_menu':null}}" wx:for="{{menu}}" wx:key="*this">
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+        <view class="menu_right" id="swiperSh">
+          <view class="right_rong_content">
+            <view class="myContentSwiper" wx:for="{{menu}}" wx:key="*this">
+              <view class="menu_detail_header">
+                <view class="menu_detail_header_left">
+                  <view class="menu_item_title">{{item.name}}</view>
+                  <view class="menu_item_description">{{item.description}}</view>
+                </view>
+                <icon class="iconfont icon-gengduo"></icon>
+              </view>
+              <view class="menu_detail_list" wx:for="{{item.foods}}" wx:for-item="j" wx:key="*this">
+                <view class="menu_detail_link">
+                  <view class="menu_food_img">
+                    <image src="//elm.cangdu.org/img/{{j.image_path}}"></image>
+                  </view>
+                  <view class="menu_food_description">
+                    <view class="food_description_head">
+                      <view class="description_foodname">
+                        {{j.name}}</view>
+                      <view class="foodsRongQiList">
+                        <view wx:key="*this" wx:for-item="foodItem" wx:for="{{j.attributes}}">
+                          <view class="xiaoFoods" style="color:#{{foodItem.icon_color}};border:1px solid #{{foodItem.icon_color}}">{{foodItem.icon_name}}</view>
+                        </view>
+                      </view>
+                    </view>
+                    <view class="food_description_content">{{j.description}}</view>
+                    <view class="food_description_sale_rating">
+                      <view>月售{{j.month_sales}}份</view>
+                      <view>好评率{{j.satisfy_rate}}%</view>
+                    </view>
+                    <view class="food_activity">
+                      <view class="food_activityList" style="color:#{{j.activity.icon_color}};border:1px solid #{{j.activity.icon_color}}">{{j.activity.image_text}}</view>
+                    </view>
+                  </view>
+                </view>
+                <view class="menu_detail_footer">
+                  <view class="food_price">
+                    <view>¥</view>
+                    <view>{{j.specfoods[0].price}}</view>
+                    <view>起</view>
+                  </view>
+                  <view class="cart_module">
+                    <!-- 如果是多种规格 -->
+                    <view wx:if="{{j.specfoods.length>1}}" class="choose_specification">
+                      <view class="show_chooselist">选规格</view>
+                    </view>
+                    <!-- 如果是单向商品 -->
+                    <view wx:else class="cart_button">
+                      <icon class="biandaSvg iconfont icon-kehuxiangqingPC-shixinjiahao"></icon>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="buy_cart_container">
+        <view class="cart_icon_num">
+          <view class="cart_icon_container">
+            <icon class="cart_icon iconfont icon-gouwuche"></icon>
+          </view>
+          <view class="cart_num">
+            <view>¥ 0.00</view>
+            <view>配送费¥{{detail.float_delivery_fee}}</view>
+          </view>
+        </view>
+        <view class="gotopay">
+          <view class="gotopay_button_style">
+            还差¥{{detail.float_minimum_order_amount}}起送
+          </view>
+        </view>
+      </view>
+    </view>
     <!-- 评论部分  -->
     <view class="rating_container" style="display:{{index==2?'blcok':'none'}}">
       <view class="rating_container_view">

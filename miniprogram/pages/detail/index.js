@@ -9,13 +9,15 @@ Page({
     longitude: "",
     index: 1, //评论和商品的选项卡
     indexTwo: 0, //选择的评论分类
+    indexThree: 0, //右侧选择的数据
     show: false, // 遮罩层
     id: '', // 商品id
     tags: [], // 评论分类页面
     scores: [], // 评分页面
     ratings: [], // 评论列表
     menu: [], // 菜单列表
-    detail: null // 详情列表
+    detail: null, // 详情列表
+    scrollContent: []
   },
 
   /**
@@ -178,6 +180,9 @@ Page({
     this.setData({
       index
     })
+    wx.pageScrollTo({
+      scrollTop: 0,
+    })
   },
   // 选择评论列表
   changeIndexTwo: function(e) {
@@ -185,5 +190,47 @@ Page({
     this.setData({
       indexTwo: index
     })
+  },
+  /**
+   * 点击滚动视图
+   */
+  gunScrollPage: function(index, next) {
+    let scrollContent = []
+    let that = this
+    if (this.data.scrollContent.length > 0) {
+      return false
+    }
+    // 滚动视图
+    wx.createSelectorQuery().selectAll(".myContentSwiper").boundingClientRect(function(rect) {
+      rect.forEach(v => {
+        scrollContent.push(v.top)
+      })
+    }).exec()
+    if (this.data.scrollContent.length === 0) {
+      this.setData({
+        scrollContent
+      }, () => {
+        if (next) {
+          that.startScrollPage(index)
+        }
+      })
+    }
+  },
+  startScrollPage: function(index) {
+    wx.pageScrollTo({
+      scrollTop: this.data.scrollContent[index] - 176,
+    })
+  },
+  // 选择左侧
+  xuanzeLeftContent: function(e) {
+    const index = e.currentTarget.dataset.index;
+    this.gunScrollPage(index, true) // 获取
+    this.startScrollPage(index) // 滚动
+    this.setData({
+      indexThree: index
+    })
+  },
+  onPageScroll(e) {
+    this.gunScrollPage(e.scrollTop, false)
   }
 })
