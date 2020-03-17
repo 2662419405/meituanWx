@@ -1,2 +1,8 @@
-<!--miniprogram/pages/my/activity/index.wxml-->
-<text>miniprogram/pages/my/activity/index.wxml</text>
+<view class="head_top">
+  <view class="title_head ellipsis">
+    <view class="title_text">积分商城</view>
+  </view>
+</view>
+<view class="dowload_container">
+  <view>暂无积分信息</view>
+</view>

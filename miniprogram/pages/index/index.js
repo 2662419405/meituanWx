@@ -39,7 +39,6 @@ Page({
     const vm = this
     let query = wx.createSelectorQuery();
     query.select('.shop_list_container').boundingClientRect(function(rect) {
-      console.log(rect)
       vm.setData({
         dingbu: rect.bottom + rect.top - 150
       })
@@ -114,7 +113,6 @@ Page({
         // res.authSetting['scope.userLocation'] == false    表示 非初始化进入该页面,且未授权
         // res.authSetting['scope.userLocation'] == true    表示 地理位置授权
         if (res.authSetting['scope.userLocation'] != undefined && res.authSetting['scope.userLocation'] != true) {
-          console.log(1)
           wx.showModal({
             title: '请求授权当前位置',
             content: '需要获取您的地理位置，请确认授权',
@@ -191,9 +189,7 @@ Page({
 
       },
       fail: function(res) {},
-      complete: function(res) {
-        // console.log(res);
-      }
+      complete: function(res) {}
     });
   },
   // 开始搜索内容

@@ -47,7 +47,9 @@
         </view>
         <view bindtap="tiaozhuan" data-url="benefit" data-shou="true" class="info-data-link">
           <view class="info-data-top">
-            <text class="c">0</text> 个
+            <text class="c">
+              <block wx:if="{{!hasUserInfo && canIUse}}">0</block>
+              <block wx:else>3</block></text> 个
           </view>
           <view class="info-data-bottom">我的优惠</view>
         </view>
