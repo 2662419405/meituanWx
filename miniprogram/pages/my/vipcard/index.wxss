@@ -1,1 +1,150 @@
-/* miniprogram/pages/my/vipcard/index.wxss */
+.head_top {
+  background-color: #3190e8;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.title_head {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  color: #fff;
+  text-align: center;
+}
+
+.title_text {
+  font-size: 1.1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.container_top_25 {
+  padding-top: 2.5rem;
+}
+
+.buy_for {
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 2.6rem;
+  padding-left: 1rem;
+}
+
+.xiugaiName {
+  font-weight: 700;
+  display: inline-block;
+  color: #000;
+}
+
+.common_style {
+  padding: 0 0.9rem;
+}
+
+.header_style {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #fff;
+  line-height: 2.6rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.header_left {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.header_right {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header_right view:nth-child(1) {
+  font-size: 0.8rem;
+  color: #999;
+  margin-right: 0.3rem;
+}
+
+.apply_vip {
+  background-color: #fff;
+  padding-left: 0.9rem;
+}
+
+.apply_vip_buy {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 0.7rem;
+  font-size: 0.7rem;
+  line-height: 2.6rem;
+}
+
+.apply_vip_buy_left {
+  outline: none;
+}
+
+.apply_vip_buy_left view {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.apply_vip_buy_left view:nth-child(2) {
+  font-weight: 700;
+  color: #f60;
+  margin-left: 0.3rem;
+}
+
+.apply_vip_buy_right {
+  border: 0.03rem solid #f60;
+  border-radius: 0.3rem;
+  line-height: 1.5rem;
+  height: 1.5rem;
+  width: 3rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #f60;
+}
+
+.vip_prerogative {
+  background-color: #fff;
+  padding-left: 0.9rem;
+}
+
+.vip_detail {
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 1rem 0;
+}
+
+.vip_detail_left {
+  margin-right: 0.8rem;
+}
+
+.vip_detail_right .vip_detail_right_title {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 400;
+}
+
+.vip_detail_right view {
+  font-size: 0.7rem;
+  color: #999;
+}
+
+.vip_detail_left image {
+  width: 2.2rem;
+  height: 2.5rem;
+}

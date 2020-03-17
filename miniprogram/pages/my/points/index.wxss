@@ -1,1 +1,116 @@
-/* miniprogram/pages/my/points/index.wxss */
+.head_top {
+  background-color: #3190e8;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.title_head {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  color: #fff;
+  text-align: center;
+}
+
+.title_text {
+  font-size: 1.1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.dowload_container {
+  padding-top: 2.5rem;
+}
+
+.content_container {
+  padding: 0.4rem;
+  background-color: #3190e8;
+}
+
+.deal_detail {
+  font-size: 0.8rem;
+  color: #999;
+  line-height: 2.5rem;
+  padding-left: 0.7rem;
+}
+
+.no_log {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.no_log view {
+  margin-top: 0.7rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.no_log image {
+  width: 10rem;
+  height: 7rem;
+}
+
+.content {
+  padding: 0.6rem;
+  background-color: #fff;
+  border-radius: 0.25rem;
+}
+
+.content_header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.content_title_style {
+  color: #666;
+}
+
+.content_title_style view {
+  display: inline-block;
+}
+
+.content_num view:nth-child(1) {
+  font-size: 2.2rem;
+  color: #333;
+}
+
+.content_num view:nth-child(2) {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.promit_button {
+  width: 100%;
+  height: 2.5rem;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 0.25rem;
+  line-height: 2.5rem;
+  margin-top: 1.2rem;
+  text-align: center;
+  background-color: #fe6d47;
+}
+
+.contetn_description image {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.3rem;
+}
+
+.contetn_description view {
+  display: inline-block;
+}
+
+.content_num view {
+  display: inline-block;
+}
