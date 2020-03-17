@@ -89,3 +89,121 @@
 .bianda {
   font-size: 1rem;
 }
+
+.info-data {
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.clear {
+  overflow: hidden;
+}
+
+.info-data-link {
+  float: left;
+  width: 33.33%;
+  display: inline-block;
+  border-right: 1px solid #f1f1f1;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.info-data-top {
+  font-size: 0.7rem;
+  color: #333;
+  padding: 0.853333rem 0 0.453333rem;
+}
+
+.info-data-top text {
+  display: inline-block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.3rem;
+  font-family: Helvetica Neue, Tahoma;
+}
+
+.info-data-top .b {
+  color: #f90;
+}
+
+.info-data-top .c {
+  color: #ff5f3e;
+}
+
+.info-data-top .d {
+  color: #6ac20b;
+}
+
+.profile-1reTe {
+  background: #fff;
+}
+
+.myorder {
+  padding-left: 2.2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.aside {
+  width: 1rem;
+  height: 1rem;
+  margin-left: -1rem;
+  margin-right: 0.4rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.aside icon {
+  position: relative;
+  top: -0.25rem;
+}
+
+.jifen {
+  color: rgb(252, 123, 83);
+}
+
+.huangguan {
+  color: rgb(255, 198, 54);
+}
+
+.fuwuzhongxin {
+  color: rgb(74, 165, 240);
+}
+
+.download {
+  color: rgb(60, 171, 255);
+}
+
+.myorder-div {
+  width: 100%;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 0.65rem 0.4rem 0.65rem 0;
+  font-size: 1rem;
+  color: #333;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.myorder-divsvg {
+  color: #666;
+}
+
+.info-data-bottom {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 400;
+  padding-bottom: 0.7rem;
+}
+
+.rongqi_container {
+  height: 100%;
+  background: #f5f5f5;
+}

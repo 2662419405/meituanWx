@@ -1,4 +1,4 @@
-<view>
+<view class="rongqi_container">
   <view class="head_top">
     <view class="title_head ellipsis">
       <view class="title_text">我的</view>
@@ -35,6 +35,79 @@
           </view>
           <view class="arrow"> > </view>
         </block>
+      </view>
+    </view>
+    <view class="info-data">
+      <view class="clear">
+        <view bindtap="tiaozhuan" data-url="balance" data-shou="true" class="info-data-link">
+          <view class="info-data-top">
+            <text class="b">0.00</text> 元
+          </view>
+          <view class="info-data-bottom">我的余额</view>
+        </view>
+        <view bindtap="tiaozhuan" data-url="benefit" data-shou="true" class="info-data-link">
+          <view class="info-data-top">
+            <text class="c">0</text> 个
+          </view>
+          <view class="info-data-bottom">我的优惠</view>
+        </view>
+        <view bindtap="tiaozhuan" data-url="points" data-shou="true" class="info-data-link">
+          <view class="info-data-top">
+            <text class="d">0</text> 分
+          </view>
+          <view class="info-data-bottom">我的积分</view>
+        </view>
+      </view>
+    </view>
+    <view class="kong"></view>
+    <view class="profile-1reTe">
+      <view class="myorder" bindtap="tiaozhuan" data-url="order" data-shou="true">
+        <view class="aside">
+          <icon class="iconfont icon-icon-university"></icon>
+        </view>
+        <view class="myorder-div">
+          <view>我的订单</view>
+          <view class="myorder-divsvg">></view>
+        </view>
+      </view>
+      <view class="myorder" bindtap="tiaozhuan" data-url="activity" data-shou="true">
+        <view class="aside">
+          <icon class="jifen iconfont icon-xiongmaojifenhongbaoshangchuan_shouhongbao"></icon>
+        </view>
+        <view class="myorder-div">
+          <view>积分商城</view>
+          <view class="myorder-divsvg">></view>
+        </view>
+      </view>
+      <view class="myorder" bindtap="tiaozhuan" data-url="vipcard" data-shou="true">
+        <view class="aside">
+          <icon class="huangguan iconfont icon-changyongtubiao-xianxingdaochu-zhuanqu--copy"></icon>
+        </view>
+        <view class="myorder-div">
+          <view>饿了么会员卡</view>
+          <view class="myorder-divsvg">></view>
+        </view>
+      </view>
+    </view>
+    <view class="kong"></view>
+    <view class="profile-1reTe">
+      <view class="myorder" bindtap="tiaozhuan" data-url="service" data-shou="false">
+        <view class="aside">
+          <icon class="fuwuzhongxin iconfont icon-fuwu"></icon>
+        </view>
+        <view class="myorder-div">
+          <view>服务中心</view>
+          <view class="myorder-divsvg">></view>
+        </view>
+      </view>
+      <view class="myorder" bindtap="tiaozhuan" data-url="download" data-shou="false">
+        <view class="aside">
+          <icon class="download iconfont icon-eliaomo"></icon>
+        </view>
+        <view class="myorder-div">
+          <view>下载饿了么APP</view>
+          <view class="myorder-divsvg">></view>
+        </view>
       </view>
     </view>
   </view>

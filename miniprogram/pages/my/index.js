@@ -95,11 +95,33 @@ Page({
 
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  tiaozhuan: function(e) {
+    let {
+      url,
+      shou
+    } = e.currentTarget.dataset;
+    if (url === "order") {
+      wx.switchTab({
+        url: '../order/index',
+      })
+      return false
+    }
+    // 正常跳转
+    if (shou === "true" && !this.data.hasUserInfo) {
+      wx.showModal({
+        title: '没有登录',
+        content: '请点击上面的获取用户信息',
+      })
+    } else {
+      wx.navigateTo({
+        url: `./${url}/index`,
+      })
+    }
   }
 })
