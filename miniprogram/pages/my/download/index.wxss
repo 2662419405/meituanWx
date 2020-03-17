@@ -1,1 +1,55 @@
-/* miniprogram/pages/my/download/index.wxss */
+.head_top {
+  background-color: #3190e8;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.title_head {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  color: #fff;
+  text-align: center;
+}
+
+.title_text {
+  font-size: 1.1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.dowload_container {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.dowload_container_content {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.determine {
+  background-color: #4cd964;
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+  margin: 0 0.9rem;
+  line-height: 2.2rem;
+  border-radius: 0.3rem;
+  margin-top: 0.7rem;
+}
+
+.logo_img {
+  border-radius: 1.3rem;
+  margin-top: 1.3rem;
+  height: 10rem;
+  width: 10rem;
+}

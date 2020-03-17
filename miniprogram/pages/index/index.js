@@ -18,6 +18,9 @@ Page({
     autoplay: false,
     interval: 2000,
     duration: 500,
+    limit: 15,
+    offset: 0,
+    dingbu: 0
   },
 
   /**
@@ -33,7 +36,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    const vm = this
+    let query = wx.createSelectorQuery();
+    query.select('.shop_list_container').boundingClientRect(function(rect) {
+      console.log(rect)
+      vm.setData({
+        dingbu: rect.bottom + rect.top - 150
+      })
+    }).exec()
   },
 
   /**
@@ -198,14 +208,15 @@ Page({
       url: './city/index',
     })
   },
-  // 获取城市列表
+  // 获取数据列表
   getDefaultList: function() {
     var vm = this;
     wx.request({
-      url: `https://elm.cangdu.org/shopping/restaurants?latitude=${this.data.latitude}&longitude=${this.data.longitude}`,
-      success: function(res) {
+      url: `https://elm.cangdu.org/shopping/restaurants?latitude=${this.data.latitude}&longitude=${this.data.longitude}&limit=${this.data.limit}&offset=${this.data.offset}`,
+      success: res => {
+        let newData = this.data.list.concat(res.data)
         vm.setData({
-          list: res.data
+          list: newData
         })
       }
     })
@@ -239,5 +250,16 @@ Page({
     wx.navigateTo({
       url: `../food/index?title=${obj.title}&restaurant_category_id=${obj.id}&geohash=${this.data.latitude},${this.data.longitude}`,
     })
+  },
+  onPageScroll(e) {
+    if (e.scrollTop > this.data.dingbu) {
+      // 获取数据
+      this.setData({
+        offset: this.data.limit + this.data.offset,
+        dingbu: this.data.dingbu + this.data.limit * 90
+      }, () => {
+        this.getDefaultList()
+      })
+    }
   }
 })

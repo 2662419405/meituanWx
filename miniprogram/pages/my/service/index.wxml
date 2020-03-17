@@ -1,2 +1,26 @@
-<!--miniprogram/pages/my/service/index.wxml-->
-<text>miniprogram/pages/my/service/index.wxml</text>
+<view class="head_top">
+  <view class="title_head ellipsis">
+    <view class="title_text">服务中心</view>
+  </view>
+</view>
+<view class="container_top_25">
+  <view class="service_connect">
+    <view class="service_left">
+      <icon class="iconfont icon-kefu rengongkefu"></icon>
+      <view>在线客服</view>
+    </view>
+    <view class="service_right">
+      <icon class="icon-dianhua iconfont dianhuakefu"></icon>
+      <view>
+        <button open-type="contact" class="xiugaiYang">在线客服</button>
+      </view>
+    </view>
+  </view>
+  <view class="hot_questions">
+    <view class="qustion_header">热门问题</view>
+    <view wx:key="*this" wx:for="{{explain}}" class="question_title">
+      <view>{{item}}</view>
+      <view class="moreContent">></view>
+    </view>
+  </view>
+</view>
