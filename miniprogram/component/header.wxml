@@ -1,0 +1,7 @@
+<view>
+  <view class="head_top">
+    <view class="title_head ellipsis">
+      <view class="title_text">{{title}}</view>
+    </view>
+  </view>
+</view>
