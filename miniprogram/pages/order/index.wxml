@@ -1,7 +1,1 @@
-<view>
-  <view class="head_top">
-    <view class="title_head ellipsis">
-      <view class="title_text">订单页面</view>
-    </view>
-  </view>
-</view>
+<header title="订单页面"></header>
